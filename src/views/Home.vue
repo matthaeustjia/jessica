@@ -1,18 +1,45 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div data-aos="fade-left" data-aos-easing="linear">
+    <full-page ref="fullpage" :options="options" id="fullpage">
+      <SectionOne></SectionOne>
+      <SectionTwo></SectionTwo>
+      <SectionThree></SectionThree>
+      <SectionFour></SectionFour>
+    </full-page>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
-
+import SectionOne from "@/components/SectionOne";
+import SectionTwo from "@/components/SectionTwo";
+import SectionThree from "@/components/SectionThree";
+import SectionFour from "@/components/SectionFour";
 export default {
-  name: 'home',
+  name: "home",
   components: {
-    HelloWorld
+    SectionOne,
+    SectionTwo,
+    SectionThree,
+    SectionFour
+  },
+  beforeMount() {},
+  data() {
+    return {
+      options: {
+        menu: "#menu",
+        navigation: true,
+        navigationPosition: "right",
+        scrollingSpeed: 1000,
+        animateAnchor: false,
+        anchors: ["Home", "leonesocmed", "invitation", "logo"]
+      }
+    };
   }
-}
+};
 </script>
+
+<style>
+body {
+}
+</style>
